@@ -1,0 +1,171 @@
+     reactNative =>app
+
+  react
+
+    面试  性能比较
+        Vue1.0            200ms
+        react15.0          100ms
+        angular1.0         300ms
+
+    react  定义：构建用户界面的javascript库   
+    框架  包含自己一套完成的样式  ，视图  ， 功能 
+    插件  完成具体某一项具体的功能
+    库   只有功能
+
+    用途：   三大方向
+        react   
+            web应用
+        reactVR  虚拟现实场景
+
+        reactNative   原生App
+
+    使用
+        npm intall   create-react-app -g
+
+      版本  create-react-app -V
+
+    创建项目
+        create-react-app 项目名称
+
+    启动项目 npm start
+
+
+    react特点
+        单向数据流
+        组件化
+        虚拟dom=》数据驱动  diff 对比
+
+    初识组件  app.js
+        组件中不适用jsx
+        ReactDOM.createElement("div",{style:{color:#f00}},"app")
+
+    初识jsx
+        jsx  javascript and Xml  可扩展的标记语言
+        1. 可以把dom节点转换为像html一样的标签
+        2.可读性强
+        3.表达式 {}
+            表达式可以解析变量 字符串 数组 方法 、
+            不能写对象 if判断
+
+    进阶jsx
+
+
+    组件
+        组件通信
+        父传子
+            props 
+            msg={this.state.msg}
+        子父
+        兄弟
+            子传父 =》 父传子
+            下载
+            npm i events -S
+            events 
+            引入
+              抛出
+            export default new EventEmitter()
+
+
+
+        顶级通信 getContext
+            npm i prop-types -S
+        
+         属性验证  prop-types  需要下载
+         
+            顶级组件
+                1.必须声明支持context ChildContextTypes
+                2.定义getChildContext()  方法返回要传输的值
+            子组件
+                1.声明支持context   contextTypes
+                2.解析context里面的内容
+
+
+
+        组件的分类
+            函数式组件
+                特点：
+                    代码简洁 清晰
+                    功能有缺陷
+            类组件
+                    代码格式复杂
+                    功能强大
+
+            受控组件（有状态组件)  非受控组件 （无状态组件）props
+            state
+
+            展示类组件 
+                特点 
+                    只负责ui视图的展示 无功能合数据的操作
+                    eg:弹出框
+
+            容器型组件
+                特点
+                    包含功能和数据 同时也负责视图的展示
+
+
+
+    生命周期
+        定义：组件在相应的阶段调用对应的钩子函数
+
+        四个阶段
+        初始化  init
+        constructor()  构造函数  想象中的初始化 默认为中的初始化 
+        挂载    moute
+            挂载之前
+            componentWillMountZ(){
+                 
+            }
+            //渲染
+            render(){
+                console.log("render)
+            }
+            //挂载
+            componentDidMount(){
+                
+            }
+        更新    update
+
+         //解决性能上的问题  组建的值是否允许进行更新
+        shouldComponentUpdate(){
+            return true/false
+        }
+        //
+        componentWillReceiveProps(){
+            
+        }
+
+        //更新之前
+        componentWillUpdate(){
+
+        }
+        //已经更新
+        componentDidUpdate(){
+
+        }
+
+       
+        销毁    destroy
+        卸载
+        componentWillUnmount(){
+
+        }
+        //捕获错误                                                                                                                                           
+        componentDidCatch(){
+
+        }
+
+
+
+    交互 axios  fetch
+
+    动画 transtion
+
+    react-hook  
+        Hook 是一些可以让你在函数组件里“钩入” React state 及生命周期等特性的函数。Hook 不能在 class 组件中使用 —— 这使得你不使用 class 也能使用 React。
+
+        useState
+        useEffect
+
+    路由 router-router react-router-dom
+    
+    redux  
